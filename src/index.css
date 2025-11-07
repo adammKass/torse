@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+@plugin './hero.js';
+/* Note: You may need to change the path to fit your project structure */
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "LeagueSpartan", sans-serif;
+}
+
+@font-face {
+  font-family: LeagueSpartan;
+  font-style: normal;
+  font-weight: 300 400 700;
+  src: url("/fonts/LeagueSpartan-VariableFont.ttf") format("trueType");
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.content {
+  @apply w-full max-w-[1440px] px-[min(4rem,8%)];
+}
+
+/* px-5 md:px-10 lg:px-20 */
+/* .hero-image-mask {
+  @apply w-full h-[400px] md:h-[600px] lg:h-[800px] bg-[url('/images/Hero-Interior-BaW.png')] bg-cover bg-center bg-amber-950;
+} */
