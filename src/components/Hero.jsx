@@ -99,8 +99,8 @@ const Hero = ({ isReady }) => {
           id="title-paragraph"
           className="uppercase text-white  w-full max-w-[450px] self-end"
         >
-          Our <span>award-winning designers</span> and architects will turn{" "}
-          <span>YOUR VISION</span> to <span>striking visualisations</span>{" "}
+          Our <span>award-winning designers</span> and architects will turn
+          <span> YOUR VISION</span> to <span>striking visualisations</span>
         </p>
       </div>
     </main>

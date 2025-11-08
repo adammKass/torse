@@ -27,15 +27,22 @@ body {
 
 @layer base {
   h1 {
-    @apply text-[clamp(2rem,10vw,8rem)] leading-[clamp(3rem,9vw,7rem)] font-bold text-center z-30  uppercase portrait:text-[clamp(4rem,10vw,8rem)] portrait:leading-[clamp(3.6rem,9vw,7rem)];
+    @apply text-[clamp(2rem,10vw,8rem)] leading-[clamp(3rem,9vw,7rem)] font-bold text-center z-30  uppercase
+    landscape:text-[clamp(1rem,6vw,8rem)] landscape:leading-[clamp(1rem,5.4vw,7rem)]
+    lg:landscape:text-[clamp(2rem,8vw,8rem)] lg:landscape:leading-[clamp(2rem,7.6vw,7rem)]
+     portrait:text-[clamp(4rem,10vw,8rem)] portrait:leading-[clamp(3.6rem,9vw,7rem)];
   }
 
   p {
-    @apply text-[clamp(0.5rem,9vw,1.125rem)] font-normal text-left z-30 portrait:text-[clamp(0.4rem,9vw,1.125rem)];
+    @apply text-[clamp(0.5rem,9vw,1.125rem)] font-normal text-left z-30 portrait:text-[clamp(0.3rem,5vw,1.125rem)] landscape:text-[clamp(0.3rem,2vw,1rem)] leading-none
+    lg:landscape:text-[clamp(0.5rem,9vw,1.125rem)];
   }
 
   p span {
-    @apply text-[clamp(0.8rem,12vw,1.875rem)] font-normal text-left z-30 portrait:text-[clamp(0.7rem,9vw,1.875rem)] leading-none;
+    @apply text-[clamp(0.8rem,12vw,2rem)] font-normal text-left z-30 portrait:text-[clamp(0.7rem,9vw,1.875rem)] 
+    landscape:text-[clamp(0.6rem,4vw,2rem)]
+    lg:landscape:text-[clamp(1rem,12vw,2rem)] 
+    leading-none;
   }
 }
 
