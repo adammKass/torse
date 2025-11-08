@@ -27,7 +27,7 @@ body {
 
 @layer base {
   h1 {
-    @apply text-[clamp(2rem,10vw,8rem)] leading-[clamp(3rem,9vw,7rem)] font-bold text-center z-30  uppercase portrait:text-[clamp(3rem,10vw,8rem)] portrait:leading-[clamp(3rem,9vw,7rem)];
+    @apply text-[clamp(2rem,10vw,8rem)] leading-[clamp(3rem,9vw,7rem)] font-bold text-center z-30  uppercase portrait:text-[clamp(4rem,10vw,8rem)] portrait:leading-[clamp(3.6rem,9vw,7rem)];
   }
 
   p {

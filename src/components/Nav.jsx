@@ -8,7 +8,7 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Link } from "@heroui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navlinks } from "../constants";
 import Logo from "./Logo";
 import menuIcon from "../assets/Menu.svg";
@@ -48,6 +48,17 @@ const Nav = ({ isReady }) => {
     });
   }, [isReady]);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Animate white background fade in
+      gsap.fromTo(
+        ".mobile-menu-bg",
+        { opacity: 0, xPercent: -100 },
+        { opacity: 1, xPercent: 0, duration: 0.4, ease: "power2.out" }
+      );
+    }
+  }, [isMenuOpen]);
+
   return (
     <div className="w-full flex items-center justify-center fixed top-0 left-0 z-50">
       <Navbar
@@ -77,22 +88,26 @@ const Nav = ({ isReady }) => {
               <Link
                 href={link.path}
                 className={`text-lg uppercase font-light ${
-                  index === 0 ? "font-medium" : "font-light"
-                }`}
+                  location.pathname === link.path ? "font-medium" : ""
+                } transition-all ease-in-out duration-300 hover:text-shadow-current hover:text-shadow-2xs`}
               >
                 {link.name}
               </Link>
             </NavbarItem>
           ))}
         </NavbarContent>
-        <NavbarMenu className="flex flex-col gap-4 content">
+        <NavbarMenu
+          className="flex flex-col gap-4 content pt-8"
+          id="navbar-menu-content"
+        >
+          <div className="mobile-menu-bg absolute inset-0 bg-white z-60"></div>
           {navlinks.map((link, index) => (
             <NavbarMenuItem key={index}>
               <Link
                 href={link.path}
-                className={`text-lg uppercase font-light ${
-                  index === 0 ? "font-medium" : "font-light"
-                }`}
+                className={`text-lg uppercase font-light 
+                  ${location.pathname === link.path ? "font-medium" : ""} z-70
+                  `}
               >
                 {link.name}
               </Link>

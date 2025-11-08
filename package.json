@@ -1,5 +1,6 @@
 {
-  "name": "torse",
+  "name": "torse-studio",
+  "homepage": "https://adammkass.github.io/torse",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
@@ -15,6 +18,7 @@
     "@heroui/react": "^2.8.5",
     "@tailwindcss/vite": "^4.1.17",
     "framer-motion": "^12.23.24",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-responsive": "^10.0.1",
