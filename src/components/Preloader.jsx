@@ -9,7 +9,7 @@ const Preloader = ({ onComplete }) => {
     const incrementValue = () => {
       setValue((prev) => {
         if (prev >= 100) return 100;
-        const next = prev + Math.floor(Math.random() * 40) + 1; // default 8+1
+        const next = prev + Math.floor(Math.random() * 8) + 1; // default 8+1
         return next > 100 ? 100 : next;
       });
       timeout = setTimeout(
@@ -37,6 +37,11 @@ const Preloader = ({ onComplete }) => {
         delay: 0.3,
         onComplete: () => {
           gsap.set("#preloader", { display: "none" });
+          gsap.to("#page-content", {
+            opacity: 1,
+            duration: 0.5,
+            ease: "power2.out",
+          });
           onComplete?.();
         },
       });
@@ -67,6 +72,9 @@ const Preloader = ({ onComplete }) => {
       >
         {value}%
       </span>
+      {/* <footer className="absolute bottom-0 left-0 w-full text-center">
+        <p className="text-center uppercase">Author:Adam Kaščák</p>
+      </footer> */}
     </section>
   );
 };

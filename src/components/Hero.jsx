@@ -66,8 +66,13 @@ const Hero = ({ isReady }) => {
   }, [isReady]);
 
   return (
-    <main className="w-full h-screen relative">
-      <div className="hero-image-mask w-full h-[75%] portrait:max-[930px]:h-[63.1%] absolute bottom-0 left-0 overflow-hidden">
+    <main className="w-full h-screen relative grid grid-rows-[calc(100vh-70vh)_0_70vh] overflow-hidden">
+      <div className="left-0 right-0 mx-auto content flex flex-col justify-end self-end row-start-1 row-end-2">
+        <h1 id="title-line1" className="text-left self-start mb-[-0.22em]">
+          Your vision.{" "}
+        </h1>
+      </div>
+      <div className="hero-image-mask w-full relative row-start-3 row-end-3 overflow-hidden">
         <img
           src={heroImageLine}
           id="hero-image-line"
@@ -82,31 +87,21 @@ const Hero = ({ isReady }) => {
         />
       </div>
       {/* 8rem 9xl */}
-      <div
-        className="uppercase font-extrabold 
-      text-[clamp(2rem,13vh,8rem)] leading-[clamp(2rem,8.6vh,8rem)] 
-      portrait:max-[930px]:text-[clamp(2rem,24vw,8rem)]
-      portrait:max-[930px]:leading-[clamp(2rem,20vw,6rem)]
-      absolute top-0 left-0 w-full h-full flex items-start justify-center pt-[clamp(2rem,17.6vh,11rem)]
-      portrait:max-[930px]:pt-[calc(4.2rem+clamp(2rem,30vw,6rem))]
-      "
-      >
-        <div className="content flex flex-col">
-          <h1 id="title-line1" className="w-full text-left">
-            Your vision,{" "}
-          </h1>
-          <h1 id="title-line2" className="text-white w-full text-right  z-30">
-            With Style{" "}
-          </h1>
-          <p
-            id="title-paragraph"
-            className="text-lg uppercase text-white font-normal w-full max-w-[400px] self-end text-left z-30"
-          >
-            Our <span className="text-3xl">award-winning designers</span> and
-            architects will turn <span className="text-3xl ">YOUR VISION</span>{" "}
-            to <span className="text-3xl">striking visualisations</span>{" "}
-          </p>
-        </div>
+
+      <div className="content flex flex-col h-fit left-0 right-0 mx-auto ">
+        <h1
+          id="title-line2"
+          className="text-white  text-right self-end z-30 mt-[-0.02em]"
+        >
+          With Style.{" "}
+        </h1>
+        <p
+          id="title-paragraph"
+          className="uppercase text-white  w-full max-w-[450px] self-end"
+        >
+          Our <span>award-winning designers</span> and architects will turn{" "}
+          <span>YOUR VISION</span> to <span>striking visualisations</span>{" "}
+        </p>
       </div>
     </main>
   );

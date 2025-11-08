@@ -12,8 +12,10 @@ function App() {
   return (
     <>
       <Preloader onComplete={() => setLoadingDone(true)}></Preloader>
-      <Nav isReady={loadingDone}></Nav>
-      <Hero isReady={loadingDone}></Hero>
+      <div id="page-content" className="opacity-0">
+        <Nav isReady={loadingDone}></Nav>
+        <Hero isReady={loadingDone}></Hero>
+      </div>
     </>
   );
 }

@@ -6,6 +6,7 @@ const Logo = () => {
       viewBox="0 0 56 34"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      id="logo"
     >
       <path
         d="M1.20711 33.1788L30.2071 4.17875V22.6788H51.3936L54.2071 33.1788H1.20711Z"

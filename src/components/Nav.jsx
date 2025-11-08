@@ -26,7 +26,7 @@ const Nav = ({ isReady }) => {
     const logoSplit = new SplitText("#nav-brand p", { type: "words" });
     const navtl = gsap.timeline();
 
-    navtl.from("#nav-logo", {
+    navtl.from("#logo", {
       yPercent: -100,
       opacity: 0,
       duration: 0.5,
@@ -66,7 +66,7 @@ const Nav = ({ isReady }) => {
             className="sm:hidden [&_.sr-only]:hidden w-12 h-12 "
           ></NavbarMenuToggle>
           <NavbarBrand id="nav-brand">
-            <Logo id="nav-logo" />
+            <Logo />
             <p className="font-light text-lg uppercase ml-2">Torse Studio</p>
           </NavbarBrand>
         </NavbarContent>
