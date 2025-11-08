@@ -66,7 +66,7 @@ const Hero = ({ isReady }) => {
   }, [isReady]);
 
   return (
-    <main className="w-full h-screen relative grid grid-rows-[calc(100vh-70vh)_0_70vh] overflow-hidden">
+    <main className="w-full h-dvh relative grid grid-rows-[calc(100dvh-70dvh)_0_70dvh] overflow-hidden">
       <div className="left-0 right-0 mx-auto content flex flex-col justify-end self-end row-start-1 row-end-2">
         <h1 id="title-line1" className="text-left self-start mb-[-0.22em]">
           Your vision.{" "}

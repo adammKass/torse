@@ -63,7 +63,7 @@ const Nav = ({ isReady }) => {
     <div className="w-full flex items-center justify-center fixed top-0 left-0 z-50">
       <Navbar
         onMenuOpenChange={setIsMenuOpen}
-        className="flex flex-row justify-between content py-5"
+        className="flex flex-row justify-between content sm:py-4 sm:landscape:py-2 lg:landscape:py-10"
       >
         <NavbarContent>
           <NavbarMenuToggle
@@ -97,7 +97,7 @@ const Nav = ({ isReady }) => {
           ))}
         </NavbarContent>
         <NavbarMenu
-          className="flex flex-col gap-4 content pt-8"
+          className="flex flex-col gap-4 content justify-center"
           id="navbar-menu-content"
         >
           <div className="mobile-menu-bg absolute inset-0 bg-white z-60"></div>
