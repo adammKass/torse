@@ -1,13 +1,22 @@
 @import "tailwindcss";
-
-@import "tailwindcss";
 @plugin './hero.js';
-/* Note: You may need to change the path to fit your project structure */
-@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
-@custom-variant dark (&:is(.dark *));
+
+:root {
+  --color-primary: #ffffff;
+  --color-secondary: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #000000;
+    --color-secondary: #ffffff;
+  }
+}
 
 @theme {
   --font-sans: "LeagueSpartan", sans-serif;
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
 }
 
 @font-face {
@@ -25,6 +34,8 @@ body {
   @apply w-full max-w-[1440px] px-[min(4rem,8%)];
 }
 
+/* Its a mess because I needed to make different sizes fit into full screen, edge cases is very short mobile landscape, had to make text drastically smaller, and portrait for smaller mobiles */
+
 @layer base {
   h1 {
     @apply text-[clamp(2rem,10vw,8rem)] leading-[clamp(3rem,9vw,7rem)] font-bold text-center z-30  uppercase
@@ -40,13 +51,8 @@ body {
 
   p span {
     @apply text-[clamp(0.8rem,12vw,2rem)] font-normal text-left z-30 portrait:text-[clamp(0.7rem,9vw,1.875rem)] 
-    landscape:text-[clamp(0.6rem,4vw,2rem)]
-    lg:landscape:text-[clamp(1rem,12vw,2rem)] 
+    landscape:text-[clamp(0.6rem,3vw,2rem)]
+    lg:landscape:text-[clamp(0.8rem,11vw,1.825rem)] 
     leading-none;
   }
 }
-
-/* px-5 md:px-10 lg:px-20 */
-/* .hero-image-mask {
-  @apply w-full h-[400px] md:h-[600px] lg:h-[800px] bg-[url('/images/Hero-Interior-BaW.png')] bg-cover bg-center bg-amber-950;
-} */

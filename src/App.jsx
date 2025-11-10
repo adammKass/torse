@@ -11,6 +11,7 @@ function App() {
   const [loadingDone, setLoadingDone] = useState(false);
   return (
     <>
+      {/* When loading is done, send the signal to Nav and Hero and show their content */}
       <Preloader onComplete={() => setLoadingDone(true)}></Preloader>
       <div id="page-content" className="opacity-0">
         <Nav isReady={loadingDone}></Nav>

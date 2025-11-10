@@ -7,9 +7,11 @@ const Preloader = ({ onComplete }) => {
   useEffect(() => {
     let timeout;
     const incrementValue = () => {
+      /* Loading value, increment it by random numbers at random intervals to simulate loading effect */
+
       setValue((prev) => {
         if (prev >= 100) return 100;
-        const next = prev + Math.floor(Math.random() * 8) + 1; // default 8+1
+        const next = prev + Math.floor(Math.random() * 8) + 1;
         return next > 100 ? 100 : next;
       });
       timeout = setTimeout(
@@ -29,9 +31,10 @@ const Preloader = ({ onComplete }) => {
       ease: "power2.out",
       transformOrigin: "left center",
     });
+    // On complete, send signal to App.jsx, disable preloader and show nav and hero contents - (to prevent blick)
     if (value === 100) {
       gsap.to("#preloader", {
-        duration: 0.2, //default 2
+        duration: 0.2,
         yPercent: -100,
         ease: "power2.inOut",
         delay: 0.3,
@@ -50,31 +53,27 @@ const Preloader = ({ onComplete }) => {
   return (
     <section
       id="preloader"
-      className="w-full fixed inset-0 z-9999 bg-white h-screen pointer-events-none"
+      className="fixed inset-0 w-full h-screen bg-primary pointer-events-none z-9999"
     >
-      <div
-        className="absolute top-1/2 left-0 w-full h-6 bg-transparent translate-y-8"
-        style={{
-          clipPath: "polygon(0 0, 98% 0, 100% 100%, 0% 100%)",
-        }}
-      >
+      {/* Loading bar, mask object and inner lading bar, in middle of screen plus translated down a bit */}
+      <div className="absolute top-1/2 left-0 w-full h-6 bg-transparent translate-y-8">
         <div
           id="loading-bar"
-          className="relative h-full w-full bg-black scale-x-0 origin-left"
+          role="progressbar"
+          className="relative h-full w-full bg-secondary scale-x-0 origin-left"
           style={{
             transformOrigin: "left center",
           }}
         ></div>
       </div>
+      {/* Big loading number */}
       <span
         id="Loading-number"
-        className="font-bold text-8xl absolute m-auto top-0 bottom-0 right-[10%] h-fit"
+        role="status"
+        className="absolute m-auto top-0 bottom-0 right-[10%] h-fit text-8xl text-secondary font-bold"
       >
         {value}%
       </span>
-      {/* <footer className="absolute bottom-0 left-0 w-full text-center">
-        <p className="text-center uppercase">Author:Adam Kaščák</p>
-      </footer> */}
     </section>
   );
 };

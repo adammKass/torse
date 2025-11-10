@@ -1,22 +1,24 @@
+//No urls because not developed yet
+
 export const navlinks = [
   {
     name: "Home",
-    path: "/torse",
+    path: "#",
   },
   {
     name: "Works",
-    path: "/works",
+    path: "#",
   },
   {
     name: "About",
-    path: "/about",
+    path: "#",
   },
   {
     name: "Services",
-    path: "/services",
+    path: "#",
   },
   {
     name: "Contact",
-    path: "/contact",
+    path: "#",
   },
 ];
