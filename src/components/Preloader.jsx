@@ -74,6 +74,23 @@ const Preloader = ({ onComplete }) => {
       >
         {value}%
       </span>
+
+      {/*
+
+      Shutter blade animation, optional, not complete
+      
+      <div className="absolute inset-0 flex flex-col">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <div
+            key={i}
+            className="shutter-blade flex-1 bg-secondary origin-top my-[4dvh]"
+            style={{
+              transform: "scaleY(0)",
+              transformOrigin: "center",
+            }}
+          />
+        ))}
+      </div> */}
     </section>
   );
 };
